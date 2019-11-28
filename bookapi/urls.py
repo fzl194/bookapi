@@ -18,7 +18,7 @@ from django.urls import path
 import book.views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('isbn=<str:isbn>', book.views.Query_ISBN),
-    path('book/', book.views.Query_Book),
+    #path('book/', book.views.Query_Book),
+    path('<str:isbn>', book.views.Query_Hello),
 ]

@@ -62,6 +62,13 @@ def GetBookInformation(isbn):
 def Query_ISBN(request, isbn):
     #return HttpResponse(isbn)
     #根据ISBN查询信息
+    if len(isbn) != 13:
+        ResultJson={"error":"未查询到结果"}
+        return HttpResponse(json.dumps(ResultJson, ensure_ascii=False), content_type="application/json,charset=utf-8" )
+    if isbn[0:3] != "978":
+        ResultJson={"error":"未查询到结果"}
+        return HttpResponse(json.dumps(ResultJson, ensure_ascii=False), content_type="application/json,charset=utf-8" )
+    
     Result = GetBookInformation(isbn)
     #构造JSON格式返回数据
     ResultJson=""
@@ -86,5 +93,9 @@ def Query_ISBN(request, isbn):
 
 
 #/book
-def Query_Book(requests):
-    return HttpResponse("Hello")
+#def Query_Book(requests):
+#    return HttpResponse("Hello")
+    
+def Query_Hello(requests, isbn):
+    return HttpResponse("Hello World")
+    

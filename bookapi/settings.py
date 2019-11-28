@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'bookapi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'HOST':'140.143.218.23',
-        'PORT': 10217,
-        'NAME': 'Book',
+        'HOST':'localhost',
+        'PORT': 3306,
+        'NAME': 'book',
         'USER': 'root',
-        'PASSWORD': 'fzl123fzl',
+        'PASSWORD': 'fzl996100*',
     }
 }
 
